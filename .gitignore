@@ -3,3 +3,4 @@
 # ignore the raw dataset
 kg.csv
 .tab
+.python-version
