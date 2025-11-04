@@ -4,3 +4,39 @@
 kg.csv
 *.tab
 .python-version
+
+
+# venv
+.venv/
+venv/
+ENV/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pkl
+*.pt
+*.bin
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_save
+*.nbconvert/
+
+# Data folders & model artifacts
+data/
+!data/.gitkeep
+checkpoints/
+logs/
+results/
+outputs/
+runs/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/

@@ -1,3 +1,12 @@
+dgl==1.1.2
+notebook
+numpy==1.23.5 # version of numpy compatable with pandas<2.0
+pandas==1.5.3 # txgnn uses append() which was removed in pandas 2.0
+
+# torch not pinned — install manually for GPU
+# TxGNN installed from GitHub, not PyPI
+
+
 accelerate==0.33.0
 aiobotocore==2.25.1
 aiohappyeyeballs==2.6.1
@@ -65,10 +74,8 @@ nest-asyncio==1.6.0
 networkx==3.5
 numba==0.62.1
 numcodecs==0.16.3
-numpy==1.26.4
 openpyxl==3.1.5
 packaging==25.0
-pandas==2.3.3
 parso==0.8.5
 patsy==1.0.2
 pexpect==4.9.0
