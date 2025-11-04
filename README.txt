@@ -2,6 +2,35 @@
 
 
 
+Installation Instructions
+------------------------------------------------------------
+# create venv
+python -m venv .venv
+
+# activate (Windows PowerShell)
+.\.venv\Scripts\activate
+
+# activate (macOS / Linux)
+source .venv/bin/activate
+
+# upgrade pip
+pip install --upgrade pip
+
+# install torch (cpu)
+pip install "torch>=2.2,<3.0"
+
+# install torch (gpu)
+pip install torch --index-url https://download.pytorch.org/whl/cu126
+
+# install TxGNN module (has to be done through git for some reason)
+pip install git+https://github.com/mims-harvard/TxGNN.git
+
+# install other requirements
+pip install -r requirements.txt
+
+
+
+
 How to import PrimmeKG
 (it must be imported in the format TxGNN takes, not just a single csv like on the PrimeKG github repo)
 ------------------------------------------------------------
@@ -11,6 +40,7 @@ mkdir -p data/primekg_full
 
 # download data and generate split
 python prepare_split.py data/primekg_full
+
 
 
 

@@ -1,3 +1,5 @@
+*This is the README from the TxGNN module repo*
+
 # TxGNN: Zero-shot prediction of therapeutic use with geometric deep learning and human centered design
 
 This repository hosts the official implementation of TxGNN, a model for identifying therapeutic opportunities for diseases with limited treatment options and minimal molecular understanding that leverages recent advances in geometric deep learning and human-centered. 
