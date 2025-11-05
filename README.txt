@@ -23,6 +23,14 @@ To do so, uncomment the GPU installation and comment out the default installatio
 5. install requirements
 pip install -r requirements.txt
 
+6. IMPORTANT - TxGNN library compatability patch
+The TxGNN library is designed to use dgl 0.5.2, but we need dgl 1.1.2.
+So, we need to make changes to the library code.
+
+replace the code in: venv\Lib\site-packages\txgnn\TxGNN.py
+
+with the code in src\TxGNN.py
+
 
 
 
