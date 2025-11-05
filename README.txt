@@ -1,31 +1,26 @@
-# network-analysis-project
-
+# Network Analysis Project
 
 
 Installation Instructions
 ------------------------------------------------------------
-# create venv
-python -m venv .venv
+1. create venv
+python -m venv venv
 
-# activate (Windows PowerShell)
-.\.venv\Scripts\activate
+2. activate venv
 
-# activate (macOS / Linux)
-source .venv/bin/activate
+(Windows PowerShell)
+venv\Scripts\activate
 
-# upgrade pip
+(macOS / Linux)
+source venv/bin/activate
+
+3. upgrade pip (if necessary)
 pip install --upgrade pip
 
-# install torch (cpu)
-pip install "torch>=2.2,<3.0"
+4. configure requirements.txt to install torch for GPU if possible.
+To do so, uncomment the GPU installation and comment out the default installation.
 
-# install torch (gpu)
-pip install torch --index-url https://download.pytorch.org/whl/cu126
-
-# install TxGNN module (has to be done through git for some reason)
-pip install git+https://github.com/mims-harvard/TxGNN.git
-
-# install other requirements
+5. install requirements
 pip install -r requirements.txt
 
 
@@ -34,11 +29,10 @@ pip install -r requirements.txt
 How to import PrimmeKG
 (it must be imported in the format TxGNN takes, not just a single csv like on the PrimeKG github repo)
 ------------------------------------------------------------
-
-# make primekg folder
+1. make primekg folder
 mkdir -p data/primekg_full
 
-# download data and generate split
+2. download data and generate split
 python prepare_split.py data/primekg_full
 
 
@@ -47,19 +41,18 @@ python prepare_split.py data/primekg_full
 Workflow for creating subgraph data
 (example for drug-disease-gene subgraph)
 ------------------------------------------------------------
-
-# make subgraph folder
+1. make subgraph folder
 mkdir -p data/subgraphs/drug-disease-gene
 
-# copy contents, not whole folder
+2. copy contents, not whole folder
 cp -r data/primekg_full/* data/subgraphs/drug-disease-gene/
 
-# prune to drug-disease-gene
-# Put "" around any node type with a '/' in the name
-python prune_subgraph.py data/subgraphs/drug-disease-gene drug disease "gene/protein"
+3. prune to drug-disease-gene
+(Put "" around any node type with a '/' in the name)
+python src/prune_subgraph.py data/subgraphs/drug-disease-gene drug disease "gene/protein"
 
-# remove old split (if present)
+4. remove old train/test/val split from full dataset (if present)
 Remove-Item -Recurse -Force data/subgraphs/drug-disease-gene/full_graph_42
 
-# regenerate split
-python prepare_split.py data/subgraphs/drug-disease-gene
+5. regenerate train/test/val split for subgraph
+python src/prepare_split.py data/subgraphs/drug-disease-gene
