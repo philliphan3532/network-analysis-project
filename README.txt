@@ -49,6 +49,19 @@ python src/prepare_split.py data/primekg_full
 Workflow for creating subgraph data
 (example for drug-disease-gene subgraph)
 ------------------------------------------------------------
+Run the bash or powershell scripts to build the subgraphs for the project
+
+bash:
+bash src/build_subgraphs.sh
+
+powershell:
+src\build_subgraph
+
+
+
+
+Or, follow the steps below to generate a specific subgraph:
+
 1. make subgraph folder
 mkdir -p data/subgraphs/drug-disease-gene
 
