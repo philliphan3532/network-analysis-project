@@ -41,7 +41,7 @@ How to import PrimmeKG
 mkdir -p data/primekg_full
 
 2. download data and generate split
-python prepare_split.py data/primekg_full
+python src/prepare_split.py data/primekg_full
 
 
 
