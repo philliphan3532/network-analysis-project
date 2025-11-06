@@ -55,7 +55,7 @@ bash:
 bash src/build_subgraphs.sh
 
 powershell:
-src\build_subgraph
+src\build_subgraphs
 
 
 
