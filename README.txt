@@ -77,3 +77,30 @@ Remove-Item -Recurse -Force data/subgraphs/drug-disease-gene/full_graph_42
 
 5. regenerate train/test/val split for subgraph
 python src/prepare_split.py data/subgraphs/drug-disease-gene
+
+
+
+
+Analyzing PrimeKG and subgraphs
+------------------------------------------------------------
+Script which, for now, gives figures about drug and disease nodes and their links:
+
+python ./src/summarize_primekg.py ./data/subgraphs/drug-disease
+
+Results:
+
+Nodes per type:
+  disease                   17,080
+  drug                      7,957
+
+Edges per relation type:
+  drug_drug                                2,672,628
+  disease_disease                          64,388
+  
+  contraindication                         61,350
+  indication                               18,776
+  off-label use                            5,136
+
+train : 7,695,474 edges
+valid : 405,024 edges
+test  : 405,024 edges
